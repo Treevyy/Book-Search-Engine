@@ -1,7 +1,7 @@
-export default interface IUserContext {
+export default interface IUserContext { 
     user: {
-        _id: string;
-        username: string;
-        email: string;
-    };
-}
+      username: string | null;
+      email: string | null;
+      _id: string | null;
+    }
+  }

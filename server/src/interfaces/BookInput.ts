@@ -1,8 +1,8 @@
 export default interface IBookInput {
-    authors?: string[];
-    description: string;
-    bookId: string;
-    image?: string;
-    link?: string;
-    title: string;
+    bookId: string | null;
+    title: string | null;
+    authors?: string[] | null;
+    description: string | null;
+    image?: string | null;
+    link?: string | null;
 }

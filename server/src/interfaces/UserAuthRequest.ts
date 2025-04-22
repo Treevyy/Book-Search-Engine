@@ -1,6 +1,6 @@
-import  type { Request }  from 'express';
-import type IJwtPayload  from './JwtPayload.js';
+import type { Request } from 'express';
+import type IJwtPayload from './JwtPayload.js';
 
-export default interface IUserAuthRequest extends Request {
-    user: IJwtPayload
+export default interface IUserAuthRequest extends Request { 
+  user: IJwtPayload
 }
