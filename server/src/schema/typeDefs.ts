@@ -39,7 +39,8 @@ type Auth {
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveBooks(authors:  [String!], description: String!, bookId: ID!, image: String!, link: String!, title: String!): User
+    saveBook(authors:  [String!], description: String!, bookId: ID!, image: String!, link: String!, title: String!): User
     removeBook(bookId: ID!): User
 }
 `
+export default typeDefs;

@@ -4,7 +4,7 @@ import { Request, Response } from 'express';
 import db from './config/connection.js';
 import {ApolloServer} from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
-import { typeDefs, resolvers } from './schemas/index.js';
+import { typeDefs, resolvers } from './schema/index.js';
 import { authenticateToken } from './services/auth.js';
 
 const server = new ApolloServer({
@@ -12,13 +12,12 @@ const server = new ApolloServer({
   resolvers,
 });
 
-const startApolloServer = async () => {
-  await server.start();
-  await db();
-
-
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+const startApolloServer = async () => {
+  await server.start();
+  await db;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -38,8 +37,9 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-db.once('open', () => {
-  app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
+app.listen(PORT, () => {
+  console.log(`API server running on port ${PORT}!`);
+  console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
 });
 }
 
