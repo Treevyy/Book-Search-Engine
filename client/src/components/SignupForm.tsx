@@ -3,7 +3,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { ChangeEvent, FormEvent } from 'react';
 
 import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutation';
+import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
