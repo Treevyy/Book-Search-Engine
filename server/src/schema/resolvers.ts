@@ -33,11 +33,12 @@ const resolvers = {
       const token = signToken(user.username, user.email, user._id);
       return { token, user };
     },
-    saveBook: async (_parent: any, { bookData }: { bookData: IBookInput }, context: IUserContext): Promise<IUserDocument | null> => {
+    saveBook: async (_parent: any, { authors, description, bookId, image, link, title }: { authors: [String], description: String, bookId: String, image: String, link: String, title: String}, context: IUserContext): Promise<IUserDocument | null> => {
+      
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { savedBooks: bookData } },
+          { $push: { savedBooks: {authors, description, bookId, image, link, title} } },
           { new: true }
         );
 
