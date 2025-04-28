@@ -75,11 +75,11 @@
   ## Screenshots
   
   <img src="assets/SearchBooks.png" alt="Book for Shrek is being searched and showing results" width="600" style="margin-bottom: 20px;">
-
+  
   <img src="assets/SavedBooks.png" alt="Added book to saved books list" width="600" style="margin-bottom: 20px;">
 
   ## Walkthrough Video
-  A demo of the application can be found at the following link: https://drive.google.com/file/d/1ypGWTxIBea_0EZGGuwxYkWO1SCozieXw/view
+  A demo of the application can be found at the following link: https://drive.google.com/file/d/1ex2rIb8SS0ChnlWKDdEgOl_A_gR0Q2HE/view
 
   ## URL Link
   The live deployed application is available at: https://book-search-engine-i5f5.onrender.com
