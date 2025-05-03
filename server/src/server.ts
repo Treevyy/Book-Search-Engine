@@ -16,7 +16,13 @@ const server = new ApolloServer({
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
-const PORT = process.env.PORT || 3001;
+// const PORT = process.env.PORT || 3001;
+
+const PORT = Number(process.env.PORT) || 3001;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`✅ Server running on 0.0.0.0:${PORT}`);
+  console.log(`✅ GraphQL at 0.0.0.0:${PORT}/graphql`);
+});
 
 const startApolloServer = async () => {
   await server.start();
@@ -40,10 +46,11 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.listen(PORT, () => {
-  console.log(`API server running on port ${PORT}!`);
-  console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
-});
+// app.listen(PORT, () => {
+//   console.log(`API server running on port ${PORT}!`);
+//   console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
+// });
+
 }
 
 startApolloServer();
